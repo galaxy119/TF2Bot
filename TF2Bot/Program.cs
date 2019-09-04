@@ -19,7 +19,7 @@ namespace TF2Bot
 			new Program();
 		}
 
-		private Program() => bot = new Bot(this);
+		private Program() => new Bot(this);
 
 		public static Task Log(LogMessage msg)
 		{
@@ -43,6 +43,8 @@ namespace TF2Bot
 		public string Address { get; set; }
 		public string Port { get; set; }
 		public string Hostname { get; set; }
+		public string RconPort { get; set; }
+		public string RconPassword { get; set; }
 
 		public static readonly Config Default = new Config
 		{
@@ -50,7 +52,9 @@ namespace TF2Bot
 			BotToken = "",
 			Address = "",
 			Port = "",
-			Hostname = ""
+			Hostname = "",
+			RconPort = "",
+			RconPassword = ""
 		};
 	}
 }
